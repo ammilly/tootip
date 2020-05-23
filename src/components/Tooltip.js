@@ -9,7 +9,7 @@ const Tooltip = forwardRef((props, ref) => {
         position = 'top',
         title,
         mouseEnterDelay = 0.2,
-        mouseLeaveDelay = 0,
+        mouseLeaveDelay = 0.2,
         children
     } = props;
 
@@ -24,14 +24,14 @@ const Tooltip = forwardRef((props, ref) => {
         eleStyle: {}
     };
 
-    const onMouseEnter = e => {
+    const onMouseEnter = () => {
         setTimeout(() => {
             setVisible(true);
             compute();
         }, mouseEnterDelay * 1000);
     };
 
-    const onMouseLeave = e => {
+    const onMouseLeave = () => {
         setTimeout(() => {
             setVisible(false);
         }, mouseLeaveDelay * 1000);
