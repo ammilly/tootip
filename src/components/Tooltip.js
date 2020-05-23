@@ -24,6 +24,27 @@ const Tooltip = forwardRef((props, ref) => {
         eleStyle: {}
     };
 
+    const onMouseEnter = e => {
+        setTimeout(() => {
+            setVisible(true);
+            compute();
+        }, mouseEnterDelay * 1000);
+    };
+
+    const onMouseLeave = e => {
+        setTimeout(() => {
+            setVisible(false);
+        }, mouseLeaveDelay * 1000);
+    };
+
+    const newChildProps = {
+        key: 'trigger',
+        onMouseEnter: onMouseEnter,
+        onMouseLeave: onMouseLeave
+    };
+
+    const triggerEle = React.cloneElement(children, newChildProps);
+
     const compute = () => {
         const triggerEleRect = triggerRef.current.getBoundingClientRect(),
             tipRect = tipRef.current.getBoundingClientRect(),
@@ -49,27 +70,6 @@ const Tooltip = forwardRef((props, ref) => {
         tipRef.current.style.transition = `${transformVal} ${mouseEnterDelay}`;
         tipRef.current.style.transform = transformVal;
     };
-
-    const onMouseEnter = e => {
-        setTimeout(() => {
-            setVisible(true);
-            compute();
-        }, mouseEnterDelay * 1000);
-    };
-
-    const onMouseLeave = e => {
-        setTimeout(() => {
-            setVisible(false);
-        }, mouseLeaveDelay * 1000);
-    };
-
-    const newChildProps = {
-        key: 'trigger',
-        onMouseEnter: onMouseEnter,
-        onMouseLeave: onMouseLeave
-    };
-
-    const triggerEle = React.cloneElement(children, newChildProps);
 
     return (
         <div className='tooltip'>

@@ -4,3 +4,5 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 First simple version.
 
+Only for mouse enter/leave event.
+

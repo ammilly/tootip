@@ -11,22 +11,10 @@ const TRIGGER = {
     FOCUS: 'focus'
 }
 
-const ALL_HANDLERS = [
-    'onClick',
-    'onMouseDown',
-    'onTouchStart',
-    'onMouseEnter',
-    'onMouseLeave',
-    'onFocus',
-    'onBlur',
-    'onContextMenu',
-];
-
 const AJUSTMENT = 20;
 
 export {
     POSITION,
     TRIGGER,
-    ALL_HANDLERS,
     AJUSTMENT
 };
