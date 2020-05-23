@@ -1,0 +1,36 @@
+.tooltip {
+    position: relative;
+    font-size: 14px;
+    padding-top: 50px;
+}
+/* .left {}
+.right {}
+.top {}
+.bottom {} */
+
+.tooltip-element {
+    position: absolute;
+    font-size: 13px;
+    border: 1px solid #000;
+    height: 30px;
+    line-height: 30px;
+    padding: 3px;
+    border-radius: 10px;
+}
+
+.trigger-element {
+    width: 90px;
+}
+
+.tooltip-arrow {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+}
+.tooltip-arrow:after {
+    content: '';
+    display: block;
+    width: 5px;
+    height: 5px;
+
+}
