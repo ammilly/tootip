@@ -16,6 +16,7 @@
     line-height: 30px;
     padding: 3px;
     border-radius: 10px;
+    z-index: 999;
 }
 
 .trigger-element {
